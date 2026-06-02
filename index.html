@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OSINT Digital Footprint Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<div class="scanlines"></div>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">OSINT</span>
+      <span class="logo-sub">footprint tracker</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <div class="header-meta">
+      <span class="blink">●</span> LIVE SESSION
+      <span id="clock"></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Input Panel -->
+  <section class="input-panel" id="inputPanel">
+    <div class="terminal-header">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="terminal-title">target_input.sh</span>
+    </div>
+    <div class="terminal-body">
+      <div class="prompt-line">
+        <span class="prompt">$</span>
+        <span class="prompt-text"> initialize footprint analysis</span>
+      </div>
+      <div class="input-group">
+        <label>TARGET EMAIL 1</label>
+        <input type="email" id="email1" placeholder="user@example.com" autocomplete="off"/>
+      </div>
+      <div class="input-group">
+        <label>TARGET EMAIL 2 <span class="optional">(optional)</span></label>
+        <input type="email" id="email2" placeholder="user2@example.com" autocomplete="off"/>
+      </div>
+      <div class="input-group">
+        <label>BASE USERNAME</label>
+        <input type="text" id="username" placeholder="username123" autocomplete="off"/>
+      </div>
+      <button class="scan-btn" id="scanBtn" onclick="runAnalysis()">
+        <span class="btn-icon">▶</span> RUN ANALYSIS
+      </button>
+      <div class="disclaimer">⚠ For educational &amp; authorized use only. Do not use against individuals without consent.</div>
+    </div>
+  </section>
+
+  <!-- Results Dashboard -->
+  <section class="dashboard hidden" id="dashboard">
+
+    <!-- Risk Summary Bar -->
+    <div class="risk-summary" id="riskSummary"></div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('overview')">OVERVIEW</button>
+      <button class="tab-btn" onclick="showTab('vectors')">RISK VECTORS</button>
+      <button class="tab-btn" onclick="showTab('platforms')">PLATFORMS</button>
+      <button class="tab-btn" onclick="showTab('checklist')">CHECKLIST</button>
+      <button class="tab-btn" onclick="showTab('report')">REPORT</button>
+    </div>
+
+    <!-- Overview Tab -->
+    <div class="tab-panel active" id="tab-overview">
+      <div class="metrics-grid" id="metricsGrid"></div>
+      <div class="two-col">
+        <div class="card" id="identityCard"></div>
+        <div class="card" id="exposureCard"></div>
+      </div>
+    </div>
+
+    <!-- Risk Vectors Tab -->
+    <div class="tab-panel hidden" id="tab-vectors">
+      <div id="vectorList"></div>
+    </div>
+
+    <!-- Platforms Tab -->
+    <div class="tab-panel hidden" id="tab-platforms">
+      <div class="platform-legend">
+        <span class="leg-item"><span class="leg-dot critical"></span> Exposed</span>
+        <span class="leg-item"><span class="leg-dot high"></span> Possible</span>
+        <span class="leg-item"><span class="leg-dot low"></span> Lower risk</span>
+      </div>
+      <div class="platform-grid" id="platformGrid"></div>
+    </div>
+
+    <!-- Checklist Tab -->
+    <div class="tab-panel hidden" id="tab-checklist">
+      <div id="checklistContainer"></div>
+    </div>
+
+    <!-- Report Tab -->
+    <div class="tab-panel hidden" id="tab-report">
+      <div class="report-actions">
+        <button class="action-btn" onclick="copyReport()">⎘ COPY REPORT</button>
+        <button class="action-btn" onclick="downloadReport()">↓ DOWNLOAD .TXT</button>
+        <button class="action-btn" onclick="printReport()">⎙ PRINT</button>
+      </div>
+      <pre class="report-text" id="reportText"></pre>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <span>OSINT Digital Footprint Tracker</span>
+  <span>by <strong>vishvaavish369</strong></span>
+  <span>Educational use only</span>
+  <a href="https://github.com/vishvaavish369" target="_blank">GitHub ↗</a>
+</footer>
+
+<script src="src/app.js"></script>
+</body>
+</html>
