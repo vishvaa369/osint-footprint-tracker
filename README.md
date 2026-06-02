@@ -105,39 +105,11 @@ A structured report following CTI (Cyber Threat Intelligence) conventions:
 
 ---
 
-## ⚖️ Legal & Ethical Notice
-
-> **This tool is for educational purposes and authorised security assessments only.**
-
-- Only analyse accounts and identifiers you **own** or have **explicit written authorisation** to investigate
-- Passive OSINT does not replace professional penetration testing
-- Unauthorised OSINT investigations may violate laws including the Computer Fraud and Abuse Act (CFAA), GDPR, and equivalents in your jurisdiction
-- The author assumes no liability for misuse
-
----
-
-## 📚 Learning Resources
-
-- [OSINT Framework](https://osintframework.com) — curated OSINT tool directory
-- [Privacy Guides](https://www.privacyguides.org) — practical privacy hardening
-- [Bellingcat OSINT Guide](https://www.bellingcat.com/category/resources/how-tos/) — investigative OSINT techniques
-- [TCM Security OSINT Course](https://academy.tcm-sec.com) — structured learning path
-- [PTES Technical Guidelines](http://www.pentest-standard.org) — penetration testing standard
-
----
-
 ## 👤 Author
 
-**vishvaavish369**
+**vishvaa369**
 - GitHub: [@vishvaavish369](https://github.com/vishvaavish369)
-- Email: vishvaavish369@gmail.com
-
+- Email: vishvaa369@gmail.com
 ---
 
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
-*Built as part of a cybersecurity portfolio demonstrating practical OSINT and threat intelligence skills.*
+demonstrating practical OSINT and threat intelligence skills.*
